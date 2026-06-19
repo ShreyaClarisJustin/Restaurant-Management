@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order History</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>My Orders</h1>
+
+<table>
+    <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+        <th>Payment</th>
+    </tr>
+
+    {% for order in orders %}
+    <tr>
+        <td>{{ order[0] }}</td>
+        <td>{{ order[1] }}</td>
+        <td>₹{{ order[2] }}</td>
+        <td>{{ order[3] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

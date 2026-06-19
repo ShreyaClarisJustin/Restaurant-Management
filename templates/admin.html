@@ -2,33 +2,37 @@
 <html>
 <head>
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <h1>Admin Dashboard</h1>
 
-<table border="1" cellpadding="10">
+<div class="dashboard">
 
-<tr>
-    <th>Order ID</th>
-    <th>Customer</th>
-    <th>Food</th>
-    <th>Quantity</th>
-    <th>Total</th>
-</tr>
+    <div class="card">
+        <h2>Total Orders</h2>
+        <h1>{{ total_orders }}</h1>
+    </div>
 
-{% for order in orders %}
-<tr>
-    <td>{{ order[0] }}</td>
-    <td>{{ order[1] }}</td>
-    <td>{{ order[2] }}</td>
-    <td>{{ order[3] }}</td>
-    <td>{{ order[4] }}</td>
-</tr>
-{% endfor %}
+    <div class="card">
+        <h2>Total Revenue</h2>
+        <h1>₹{{ revenue }}</h1>
+    </div>
 
-</table>
+    <div class="card">
+        <h2>Total Customers</h2>
+        <h1>{{ total_customers }}</h1>
+    </div>
+
+    <div class="card">
+        <h2>Most Ordered Food</h2>
+        <h3>{{ food_name }}</h3>
+        <p>{{ food_count }} Orders</p>
+    </div>
+
+</div>
 
 </body>
 </html>

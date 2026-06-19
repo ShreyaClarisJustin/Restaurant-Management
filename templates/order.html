@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Place Order</title>
@@ -36,6 +36,61 @@
 
     <button type="submit">
         Continue
+    </button>
+
+</form>
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Order</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Place Your Order</h1>
+
+<h2>{{ food[1] }}</h2>
+<p>Price: ₹{{ food[2] }}</p>
+
+<form action="/place_order" method="POST">
+
+    <input type="hidden"
+           name="food_id"
+           value="{{ food[0] }}">
+
+    <label>Quantity</label>
+    <br>
+    <input type="number"
+           name="quantity"
+           min="1"
+           value="1"
+           required>
+
+    <br><br>
+
+    <label>Payment Method</label>
+    <br>
+
+    <select name="payment_method">
+        <option value="UPI">UPI</option>
+        <option value="Cash">Cash on Delivery</option>
+        <option value="Card">Card</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Place Order
     </button>
 
 </form>

@@ -8,7 +8,7 @@
     />
   </head>
   <body> -->
-    <!-- <div class="logo"><h1>🍴 FOOD DIARIES</h1></div>
+<!-- <div class="logo"><h1>🍴 FOOD DIARIES</h1></div>
     <nav class="nav-links">
       <a href="/">Home</a> <a href="/menu">Menu</a> <a href="/admin">Admin</a>
       <a href="/login" class="login-btn">Login</a>
@@ -31,124 +31,139 @@
       </a>
     </div> -->
 
-    <!doctype html>
+<!doctype html>
 
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Food Diaries</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Diaries</title>
 
-        ```
-        <link
-          rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}"
+    ```
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    ```
+  </head>
+  <body>
+    ```
+    <!-- Navigation Bar -->
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <h1>🍴 FOOD DIARIES</h1>
+        </div>
+
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/menu">Menu</a>
+          <a href="/admin">Admin</a>
+
+          {% if session.get('user_name') %}
+
+          <div class="dropdown">
+            <button class="profile-btn">👤 {{ session['user_name'] }}</button>
+
+            <div class="dropdown-content">
+              <a href="/profile">My Profile</a>
+              <a href="/history">My Orders</a>
+              <a href="/logout">Logout</a>
+            </div>
+          </div>
+
+          {% else %}
+
+          <a href="/login" class="login-btn">Login</a>
+          <a href="/register" class="register-btn">Register</a>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Enjoy Delicious Food Anytime</h1>
+
+        <p>
+          Welcome to Food Diaries! Discover freshly prepared meals, exciting
+          offers, and quick doorstep delivery. Satisfy your cravings with our
+          chef-crafted menu.
+        </p>
+
+        <a href="/menu">
+          <button>Explore Menu</button>
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="{{ url_for('static', filename='images/hero_image.png') }}"
+          alt="Food Image"
         />
-        ```
-      </head>
-      <body>
-        ```
-        <!-- Navigation Bar -->
-        <header>
-          <div class="navbar">
-            <div class="logo">
-              <h1>🍴 FOOD DIARIES</h1>
-            </div>
+      </div>
+    </section>
 
-            <nav class="nav-links">
-              <a href="/">Home</a>
-              <a href="/menu">Menu</a>
-              <a href="/admin">Admin</a>
-              <a href="/login" class="login-btn">Login</a>
-              <a href="/register" class="register-btn">Register</a>
-            </nav>
-          </div>
-        </header>
+    <!-- Offers Section -->
+    <section id="offers">
+      <h2>Why Customers Love Us</h2>
 
-        <!-- Hero Section -->
-        <section class="hero">
-          <div class="hero-text">
-            <h1>Enjoy Delicious Food Anytime</h1>
-
-            <p>
-              Welcome to Food Diaries! Discover freshly prepared meals, exciting
-              offers, and quick doorstep delivery. Satisfy your cravings with
-              our chef-crafted menu.
-            </p>
-
-            <a href="/menu">
-              <button>Explore Menu</button>
-            </a>
-          </div>
-
-          <div class="hero-image">
-            <img
-              src="{{ url_for('static', filename='images/hero_image.png') }}"
-              alt="Food Image"
-            />
-          </div>
-        </section>
-
-        <!-- Offers Section -->
-        <section id="offers">
-          <h2>Why Customers Love Us</h2>
-
-          <div class="offers-container">
-            <div class="offer-card">
-              <h3>🎉 20% OFF</h3>
-              <p>
-                New customers enjoy 20% discount on their first order. Great
-                food at a great price.
-              </p>
-            </div>
-
-            <div class="offer-card">
-              <h3>🚚 Free Delivery</h3>
-              <p>
-                Get free delivery on all orders above ₹500 and enjoy
-                restaurant-quality food at home.
-              </p>
-            </div>
-
-            <div class="offer-card">
-              <h3>🥗 Fresh & Healthy</h3>
-              <p>
-                Every dish is prepared fresh daily using quality ingredients and
-                expert culinary techniques.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="container">
-          <h2>Welcome to Food Diaries</h2>
-
+      <div class="offers-container">
+        <div class="offer-card">
+          <h3>🎉 20% OFF</h3>
           <p>
-            Food Diaries is your trusted destination for delicious meals,
-            exceptional service, and memorable dining experiences. We combine
-            taste, quality, and convenience to serve happiness on every plate.
+            New customers enjoy 20% discount on their first order. Great food at
+            a great price.
           </p>
-        </section>
+        </div>
 
-        <!-- Footer -->
-        <footer id="contact">
-          <h3>Food Diaries</h3>
+        <div class="offer-card">
+          <h3>🚚 Free Delivery</h3>
+          <p>
+            Get free delivery on all orders above ₹500 and enjoy
+            restaurant-quality food at home.
+          </p>
+        </div>
 
-          <p>Serving happiness one meal at a time.</p>
+        <div class="offer-card">
+          <h3>🥗 Fresh & Healthy</h3>
+          <p>
+            Every dish is prepared fresh daily using quality ingredients and
+            expert culinary techniques.
+          </p>
+        </div>
+      </div>
+    </section>
 
-          <p>Email: fooddiaries@gmail.com</p>
+    <!-- About Section -->
+    <section class="container">
+      <h2>Welcome to Food Diaries</h2>
 
-          <p>Phone: +91 9876543210</p>
+      <p>
+        Food Diaries is your trusted destination for delicious meals,
+        exceptional service, and memorable dining experiences. We combine taste,
+        quality, and convenience to serve happiness on every plate.
+      </p>
+    </section>
 
-          <p>Address: Chennai, Tamil Nadu, India</p>
+    <!-- Footer -->
+    <footer id="contact">
+      <h3>Food Diaries</h3>
 
-          <p>© 2026 Food Diaries. All Rights Reserved.</p>
-        </footer>
-        
-      </body>
-    </html>
-  <!-- </body>
+      <p>Serving happiness one meal at a time.</p>
+
+      <p>Email: fooddiaries@gmail.com</p>
+
+      <p>Phone: +91 9876543210</p>
+
+      <p>Address: Chennai, Tamil Nadu, India</p>
+
+      <p>© 2026 Food Diaries. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
+<!-- </body>
 </html> -->
 
 <!-- <body>
