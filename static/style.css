@@ -1,4 +1,4 @@
-body{
+/* body{
     font-family: Arial, sans-serif;
     background:#f5f5f5;
     text-align:center;
@@ -53,4 +53,271 @@ button:hover{
 table{
     margin:auto;
     background:white;
+} */
+
+
+
+
+
+
+
+
+
+/* General Styles */
+
+body {
+    margin: 0;
+    /* font-family: Arial, sans-serif; */
+    background: #f5f5f5;
+    line-height: 1.4;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #ff6b35;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.logo img {
+    border-radius: 50%;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.nav-links{
+    display:flex;
+    align-items:center;
+}
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* Login/Register Buttons */
+
+.login-btn,
+.register-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: white;
+    color: #ff6b35 !important;
+}
+
+/* Hero Section */
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.hero image img {
+    width: 400px;
+    max-width: 100%;
+}
+
+/* Buttons */
+
+button {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+transition: 0.2s ease-in-out;}
+
+button:hover {
+    background: #e85a2a;
+    opacity: 0.8;
+  transition: 0.2s ease-in-out;
+}
+
+/* Home Page Containers */
+
+.container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Offers Section */
+
+#offers {
+    text-align: center;
+    padding: 50px;
+    background: #f5f5f5;
+}
+
+.offers-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.offer-card {
+    background: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.offer-card h3 {
+    color: #ff6b35;
+}
+
+/* Menu Page */
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h2 {
+    margin: 10px 0;
+}
+
+.card p {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Forms */
+
+form {
+    background: white;
+    width: 350px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* Tables (Admin Page) */
+
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #ff6b35;
+    color: white;
+}
+
+/* Footer */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero img {
+        width: 300px;
+    }
+
+    .offers-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        width: 95%;
+    }
 }

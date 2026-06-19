@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Food Diaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Create Account</h1>
+
+    <form action="/register" method="POST">
+
+        <label>Full Name</label>
+        <br>
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            required>
+
+        <br>
+
+        <label>Email</label>
+        <br>
+        <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required>
+
+        <br>
+
+        <label>Phone Number</label>
+        <br>
+        <input
+            type="tel"
+            name="phone"
+            placeholder="Enter phone number"
+            required>
+
+        <br>
+
+        <label>Password</label>
+        <br>
+        <input
+            type="password"
+            name="password"
+            placeholder="Create password"
+            required>
+
+        <br>
+
+        <label>Confirm Password</label>
+        <br>
+        <input
+            type="password"
+            name="confirm_password"
+            placeholder="Confirm password"
+            required>
+
+        <br>
+
+        <button type="submit">Register</button>
+
+        <p>
+            Already have an account?
+            <a href="/login">Login</a>
+        </p>
+
+    </form>
+
+</div>
+
+</body>
+</html>
