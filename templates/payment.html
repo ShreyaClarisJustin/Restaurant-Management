@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Payment</h1>
+
+<h2>Total Amount: ₹{{ total }}</h2>
+
+<form action="/success" method="POST">
+
+    <button type="submit"
+            name="method"
+            value="Online">
+        Online Payment
+    </button>
+
+    <button type="submit"
+            name="method"
+            value="Cash">
+        Cash On Delivery
+    </button>
+
+</form>
+
+</body>
+</html>

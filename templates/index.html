@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Diaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🍴 FOOD DIARIES</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/menu">Menu</a>
+        <a href="/admin">Admin</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Welcome to Food Diaries</h2>
+    <p>Delicious food delivered to your doorstep.</p>
+
+    <img src="{{ url_for('static', filename='images/hero_image.png') }}"
+         width="400">
+
+    <br><br>
+
+    <a href="/menu">
+        <button>Explore Menu</button>
+    </a>
+</div>
+
+</body>
+</html>
