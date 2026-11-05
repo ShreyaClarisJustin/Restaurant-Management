@@ -1,38 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-
-<h1>Admin Dashboard</h1>
-
-<div class="dashboard">
-
-    <div class="card">
-        <h2>Total Orders</h2>
-        <h1>{{ total_orders }}</h1>
-    </div>
-
-    <div class="card">
-        <h2>Total Revenue</h2>
-        <h1>₹{{ revenue }}</h1>
-    </div>
-
-    <div class="card">
-        <h2>Total Customers</h2>
-        <h1>{{ total_customers }}</h1>
-    </div>
-
-    <div class="card">
-        <h2>Most Ordered Food</h2>
-        <h3>{{ food_name }}</h3>
-        <p>{{ food_count }} Orders</p>
-    </div>
-
-</div>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Food Diaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    {% include '_navbar.html' %}
+    <main>
+      <header class="page-heading">
+        <span class="eyebrow">A quick overview</span>
+        <h1>Restaurant dashboard</h1>
+        <p>Here is how things are cooking today.</p>
+      </header>
+      <section class="dashboard" aria-label="Restaurant statistics">
+        <article class="card">
+          <h2>Total orders</h2>
+          <h1>{{ total_orders }}</h1>
+        </article>
+        <article class="card">
+          <h2>Total revenue</h2>
+          <h1>₹{{ revenue }}</h1>
+        </article>
+        <article class="card">
+          <h2>Total customers</h2>
+          <h1>{{ total_customers }}</h1>
+        </article>
+        <article class="card">
+          <h2>Most ordered food</h2>
+          <h3>{{ food_name }}</h3>
+          <p>{{ food_count }} orders</p>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

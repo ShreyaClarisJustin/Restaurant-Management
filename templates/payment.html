@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Payment</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment | Food Diaries</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-
-<h1>Payment</h1>
-
-<h2>Total Amount: ₹{{ total }}</h2>
-
-<form action="/success" method="POST">
-
-    <button type="submit"
-            name="method"
-            value="Online">
-        Online Payment
-    </button>
-
-    <button type="submit"
-            name="method"
-            value="Cash">
-        Cash On Delivery
-    </button>
-
-</form>
-
-</body>
+  </head>
+  <body>
+    {% include '_navbar.html' %}
+    <main>
+      <header class="page-heading">
+        <span class="eyebrow">Almost there</span>
+        <h1>Choose how to pay</h1>
+        <p>Total amount <strong>₹{{ total }}</strong></p>
+      </header>
+      <form action="/success" method="POST">
+        <button type="submit" name="method" value="Online">Pay online</button>
+        <button class="secondary-button" type="submit" name="method" value="Cash">Cash on delivery</button>
+      </form>
+    </main>
+  </body>
 </html>

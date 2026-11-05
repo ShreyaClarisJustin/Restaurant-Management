@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Menu</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our menu | Food Diaries</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-
-<h1>Our Menu</h1>
-
-<div class="menu-container">
-
-{% for food in foods %}
-<div class="card">
-
-<img src="{{ url_for('static', filename=food[3]) }}" width="200">
-    <h2>{{ food[1] }}</h2>
-
-    <p>₹ {{ food[2] }}</p>
-
-    <a href="/order/{{ food[0] }}">
-        <button>Order Now</button>
-    </a>
-
-</div>
-{% endfor %}
-
-</div>
-
-</body>
+  </head>
+  <body>
+    {% include '_navbar.html' %}
+    <main>
+      <header class="page-heading">
+        <span class="eyebrow">Prepared fresh for you</span>
+        <h1>Find your new favorite.</h1>
+        <p>Made with care, served with love. What are you craving today?</p>
+      </header>
+      {% if foods %}
+      <section class="menu-container" aria-label="Food menu">
+        {% for food in foods %}
+        <article class="card">
+          <img src="{{ url_for('static', filename=food[3]) }}" alt="{{ food[1] }}" loading="lazy">
+          <h2>{{ food[1] }}</h2>
+          <p>₹ {{ food[2] }}</p>
+          <a class="button" href="/order/{{ food[0] }}">Order now</a>
+        </article>
+        {% endfor %}
+      </section>
+      {% else %}
+      <section class="container">
+        <h2>Our kitchen is getting ready</h2>
+        <p>There are no menu items available right now. Please check back soon.</p>
+      </section>
+      {% endif %}
+    </main>
+  </body>
 </html>

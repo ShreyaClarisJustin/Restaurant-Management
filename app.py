@@ -13,19 +13,28 @@
 
 
 
-
+import os
 from flask import Flask, render_template
 from flask import request
-
+from dotenv import load_load_env
 import mysql.connector
+
+load_load_env()
 
 app = Flask(__name__)
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="sandra",
-    database="restaurant_db"
+# Retrieve variables safely
+db_host = os.getenv("DB_HOST")
+db_user = os.getenv("DB_USER")
+db_password = os.getenv("DB_PASSWORD")
+db_name = os.getenv("DB_NAME")
+
+# Connect using variables
+connection = mysql.connector.connect(
+    host=db_host,
+    user=db_user,
+    password=db_password,
+    database=db_name
 )
 
 cursor = db.cursor()

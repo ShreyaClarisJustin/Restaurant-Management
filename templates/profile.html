@@ -1,31 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Profile</title>
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-
-<div class="container">
-
-    <h1>My Profile</h1>
-
-    <div class="card">
-
-        <h2>{{ user[0] }}</h2>
-
-        <p><strong>Email:</strong> {{ user[1] }}</p>
-
-        <p><strong>Phone:</strong> {{ user[2] }}</p>
-
-        <a href="/history">
-            <button>My Orders</button>
-        </a>
-
-    </div>
-
-</div>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My profile | Food Diaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    {% include '_navbar.html' %}
+    <main>
+      <header class="page-heading">
+        <span class="eyebrow">Your account</span>
+        <h1>My profile</h1>
+      </header>
+      <section class="container">
+        <article class="card profile-card">
+          <h2>{{ user[0] }}</h2>
+          <p><strong>Email:</strong> {{ user[1] }}</p>
+          <p><strong>Phone:</strong> {{ user[2] }}</p>
+          <a class="button" href="/history">View my orders</a>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

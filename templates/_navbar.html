@@ -1,0 +1,30 @@
+<header class="site-header">
+  <div class="navbar">
+    <a class="logo" href="/">
+      <span class="logo-mark" aria-hidden="true">F</span>
+      <span class="logo-copy">
+        <strong>Food Diaries</strong>
+        <small>Good food, good mood</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/menu">Menu</a>
+      <a href="/#offers">Our story</a>
+      <a href="/admin">Dashboard</a>
+      {% if session.get('user_name') %}
+      <div class="dropdown">
+        <button class="profile-btn" type="button">{{ session['user_name'] }} ▾</button>
+        <div class="dropdown-content">
+          <a href="/profile">My profile</a>
+          <a href="/history">My orders</a>
+          <a href="/logout">Log out</a>
+        </div>
+      </div>
+      {% else %}
+      <a class="login-btn" href="/login">Log in</a>
+      <a class="register-btn" href="/register">Get started</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>

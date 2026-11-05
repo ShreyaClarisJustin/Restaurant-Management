@@ -1,31 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Order History</title>
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-
-<h1>My Orders</h1>
-
-<table>
-    <tr>
-        <th>Food</th>
-        <th>Quantity</th>
-        <th>Total Price</th>
-        <th>Payment</th>
-    </tr>
-
-    {% for order in orders %}
-    <tr>
-        <td>{{ order[0] }}</td>
-        <td>{{ order[1] }}</td>
-        <td>₹{{ order[2] }}</td>
-        <td>{{ order[3] }}</td>
-    </tr>
-    {% endfor %}
-</table>
-
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My orders | Food Diaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    {% include '_navbar.html' %}
+    <main>
+      <header class="page-heading">
+        <span class="eyebrow">Good things, again</span>
+        <h1>My orders</h1>
+        <p>A little history of the meals you have enjoyed.</p>
+      </header>
+      <table>
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Total price</th>
+            <th>Status</th>
+            <th>Order date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
+          <tr>
+            <td>{{ order[1] }}</td>
+            <td>{{ order[2] }}</td>
+            <td>₹{{ order[3] }}</td>
+            <td>{{ order[4] }}</td>
+            <td>{{ order[5] }}</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="5">No orders yet. Your next favorite is waiting on the <a href="/menu">menu</a>.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
 </html>
